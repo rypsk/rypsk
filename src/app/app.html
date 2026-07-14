@@ -158,15 +158,19 @@
         <h2 class="text-4xl font-bold mb-4" data-aos="fade-up">{{ t().projects.titlePre }} <span class="text-primary">{{ t().projects.titleHighlight }}</span></h2>
         <p class="text-base-content/60 max-w-2xl mx-auto">{{ t().projects.subtitle }}</p>
       </div>
-      <div class="flex justify-center">
-        @for (project of t().projects.items; track project.title) {
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        @for (project of t().projects.items; track project.title; let i = $index) {
           <div
-            class="card lg:card-side bg-base-200 border border-primary/30 overflow-hidden hover:border-primary/70 hover:shadow-2xl hover:shadow-primary/10 transition-all max-w-3xl"
-            data-aos="zoom-in"
+            class="card lg:card-side bg-base-200 border border-primary/30 overflow-hidden hover:border-primary/70 hover:shadow-2xl hover:shadow-primary/10 transition-all"
+            [attr.data-aos]="i % 2 === 0 ? 'fade-right' : 'fade-left'"
           >
-            <figure class="bg-primary/10 w-full lg:w-56 flex items-center justify-center p-10 relative overflow-hidden">
+            <figure class="bg-primary/10 w-full lg:w-48 flex items-center justify-center p-8 relative overflow-hidden">
               <div class="absolute inset-0 bg-primary/10 blur-2xl"></div>
-              <svg lucideZap class="w-20 h-20 text-primary relative z-10"></svg>
+              @if (project.title === 'PrecioLuz') {
+                <svg lucideZap class="w-16 h-16 text-primary relative z-10"></svg>
+              } @else {
+                <svg lucideGlobe class="w-16 h-16 text-primary relative z-10"></svg>
+              }
             </figure>
             <div class="card-body">
               <h2 class="card-title text-2xl">{{ project.title }}</h2>

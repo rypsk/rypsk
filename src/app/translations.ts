@@ -95,6 +95,13 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
           badges: ['Angular', 'API REE'],
           url: 'https://precioluz.rypsk.com',
         },
+        {
+          title: 'Population',
+          description:
+            'Representación visual interactiva del crecimiento de la población mundial en tiempo real, mostrando nacimientos y muertes para concienciar sobre la demografía global.',
+          badges: ['Angular', 'D3.js'],
+          url: 'https://population.rypsk.com',
+        },
       ],
     },
     contact: {
@@ -157,6 +164,13 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
             'Web application that shows the real-time price of electricity in Spain, hour by hour, helping individuals and businesses optimize their energy consumption.',
           badges: ['Angular', 'REE API'],
           url: 'https://precioluz.rypsk.com',
+        },
+        {
+          title: 'Population',
+          description:
+            'Interactive visual representation of world population growth in real-time, showing births and deaths to raise awareness about global demographics.',
+          badges: ['Angular', 'D3.js'],
+          url: 'https://population.rypsk.com',
         },
       ],
     },
