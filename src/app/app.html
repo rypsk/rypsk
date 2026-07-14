@@ -1,0 +1,261 @@
+<div class="min-h-screen bg-base-100 font-sans text-base-content" [attr.data-theme]="theme()" [attr.lang]="lang()">
+  <!-- Navbar -->
+  <div class="navbar bg-base-100/80 backdrop-blur-md sticky top-0 z-50 border-b border-primary/20 px-4 lg:px-12 flex-col items-stretch">
+    <div class="flex items-center w-full">
+      <div class="flex-1">
+        <a
+          href="#hero"
+          class="text-2xl font-bold tracking-tighter flex items-center gap-2 btn btn-ghost px-2 hover:bg-primary/10"
+          (click)="closeMenu()"
+        >
+          <svg lucideTerminal class="w-8 h-8 text-primary"></svg>
+          <span>rypsk<span class="text-primary">.com</span></span>
+        </a>
+      </div>
+      <!-- Menú horizontal siempre visible en desktop -->
+      <div class="flex-none hidden lg:flex items-center gap-1">
+        <ul class="menu menu-horizontal px-1 font-medium gap-1">
+          <li><a href="#hero" class="hover:text-primary">{{ t().nav.home }}</a></li>
+          <li><a href="#stack" class="hover:text-primary">{{ t().nav.stack }}</a></li>
+          <li><a href="#projects" class="hover:text-primary">{{ t().nav.projects }}</a></li>
+          <li><a href="#contact" class="hover:text-primary">{{ t().nav.contact }}</a></li>
+        </ul>
+        <button
+          type="button"
+          class="btn btn-ghost btn-circle text-primary ml-2"
+          (click)="toggleTheme()"
+          [attr.aria-label]="theme() === 'rypsk' ? t().theme.activateLight : t().theme.activateDark"
+          title="{{ theme() === 'rypsk' ? t().theme.activateLight : t().theme.activateDark }}"
+        >
+          @if (theme() === 'rypsk') {
+            <svg lucideSun class="w-5 h-5"></svg>
+          } @else {
+            <svg lucideMoon class="w-5 h-5"></svg>
+          }
+        </button>
+        <button
+          type="button"
+          class="btn btn-ghost btn-circle text-primary text-xs font-bold"
+          (click)="toggleLang()"
+          [attr.aria-label]="t().language.switchLabel"
+          title="{{ t().language.switchLabel }}"
+        >
+          {{ lang() === 'es' ? 'EN' : 'ES' }}
+        </button>
+      </div>
+      <!-- Hamburguesa + toggle tema/idioma en móvil -->
+      <div class="flex-none lg:hidden flex items-center gap-1">
+        <button
+          type="button"
+          class="btn btn-ghost btn-circle text-primary"
+          (click)="toggleTheme()"
+          [attr.aria-label]="theme() === 'rypsk' ? t().theme.activateLight : t().theme.activateDark"
+          title="{{ theme() === 'rypsk' ? t().theme.activateLight : t().theme.activateDark }}"
+        >
+          @if (theme() === 'rypsk') {
+            <svg lucideSun class="w-5 h-5"></svg>
+          } @else {
+            <svg lucideMoon class="w-5 h-5"></svg>
+          }
+        </button>
+        <button
+          type="button"
+          class="btn btn-ghost btn-circle text-primary text-xs font-bold"
+          (click)="toggleLang()"
+          [attr.aria-label]="t().language.switchLabel"
+          title="{{ t().language.switchLabel }}"
+        >
+          {{ lang() === 'es' ? 'EN' : 'ES' }}
+        </button>
+        <button
+          type="button"
+          class="btn btn-ghost btn-circle text-primary"
+          (click)="toggleMenu()"
+          [attr.aria-expanded]="menuOpen()"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+        </button>
+      </div>
+    </div>
+    @if (menuOpen()) {
+      <ul class="menu font-medium w-full lg:hidden" data-aos="fade-down" data-aos-duration="300">
+        <li><a href="#hero" (click)="closeMenu()">{{ t().nav.home }}</a></li>
+        <li><a href="#stack" (click)="closeMenu()">{{ t().nav.stack }}</a></li>
+        <li><a href="#projects" (click)="closeMenu()">{{ t().nav.projects }}</a></li>
+        <li><a href="#contact" (click)="closeMenu()">{{ t().nav.contact }}</a></li>
+      </ul>
+    }
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero min-h-[90vh] bg-base-100 px-4 scroll-mt-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:48px_48px]"></div>
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-primary/30 rounded-full blur-[140px]"></div>
+    <div class="hero-content text-center relative z-10">
+      <div class="max-w-3xl" data-aos="fade-up">
+        <div class="badge badge-outline border-primary/40 text-primary gap-2 mb-6 py-3">
+          <svg lucideCpu class="w-4 h-4"></svg>
+          {{ t().hero.badge }}
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+          {{ t().hero.titlePre }} <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{{ t().hero.titleHighlight }}</span> {{ t().hero.titlePost }}
+        </h1>
+        <p class="py-6 text-xl text-base-content/70">
+          {{ t().hero.description }}
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mt-4">
+          <a href="#projects" class="btn btn-primary btn-lg shadow-lg shadow-primary/30">{{ t().hero.ctaProjects }}</a>
+          <a href="#contact" class="btn btn-outline border-base-content/20 hover:border-primary hover:bg-primary/10 hover:text-primary btn-lg">{{ t().hero.ctaContact }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section id="stack" class="py-24 bg-base-200 px-4 scroll-mt-20 border-y border-primary/10">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-4" data-aos="fade-down">{{ t().stack.titlePre }} <span class="text-primary">{{ t().stack.titleHighlight }}</span></h2>
+      <p class="text-base-content/60 mb-16 max-w-2xl mx-auto">{{ t().stack.subtitle }}</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+        <div class="card bg-base-100 border border-base-content/10 p-8 hover:border-primary/60 hover:-translate-y-1 transition-all" data-aos="zoom-in" data-aos-delay="100">
+          <div class="flex flex-col items-center gap-4">
+            <span class="text-2xl font-bold">Java</span>
+            <div class="badge badge-outline border-primary/40 text-primary">Backend</div>
+          </div>
+        </div>
+        <div class="card bg-base-100 border border-base-content/10 p-8 hover:border-primary/60 hover:-translate-y-1 transition-all" data-aos="zoom-in" data-aos-delay="200">
+          <div class="flex flex-col items-center gap-4">
+            <span class="text-2xl font-bold">Angular</span>
+            <div class="badge badge-outline border-primary/40 text-primary">Frontend</div>
+          </div>
+        </div>
+        <div class="card bg-base-100 border border-base-content/10 p-8 hover:border-primary/60 hover:-translate-y-1 transition-all" data-aos="zoom-in" data-aos-delay="300">
+          <div class="flex flex-col items-center gap-4">
+            <span class="text-2xl font-bold">Spring Boot</span>
+            <div class="badge badge-outline border-primary/40 text-primary">API</div>
+          </div>
+        </div>
+        <div class="card bg-base-100 border border-base-content/10 p-8 hover:border-primary/60 hover:-translate-y-1 transition-all" data-aos="zoom-in" data-aos-delay="400">
+          <div class="flex flex-col items-center gap-4">
+            <span class="text-2xl font-bold">TypeScript</span>
+            <div class="badge badge-outline border-primary/40 text-primary">Languages</div>
+          </div>
+        </div>
+        <div class="card bg-base-100 border border-base-content/10 p-8 hover:border-primary/60 hover:-translate-y-1 transition-all" data-aos="zoom-in" data-aos-delay="500">
+          <div class="flex flex-col items-center gap-4">
+            <span class="text-2xl font-bold">PostgreSQL</span>
+            <div class="badge badge-outline border-primary/40 text-primary">Database</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-24 bg-base-100 px-4 scroll-mt-20">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4" data-aos="fade-up">{{ t().projects.titlePre }} <span class="text-primary">{{ t().projects.titleHighlight }}</span></h2>
+        <p class="text-base-content/60 max-w-2xl mx-auto">{{ t().projects.subtitle }}</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        @for (project of t().projects.items; track project.title; let i = $index) {
+          <div
+            class="card lg:card-side bg-base-200 border border-base-content/10 overflow-hidden hover:border-primary/60 transition-colors"
+            [attr.data-aos]="i % 2 === 0 ? 'fade-right' : 'fade-left'"
+          >
+            <figure class="bg-primary/10 w-full lg:w-48 flex items-center justify-center p-8">
+              @switch (i % 4) {
+                @case (0) { <svg lucideCode class="w-16 h-16 text-primary"></svg> }
+                @case (1) { <svg lucideTerminal class="w-16 h-16 text-primary"></svg> }
+                @case (2) { <svg lucideGlobe class="w-16 h-16 text-primary"></svg> }
+                @default { <svg lucideCpu class="w-16 h-16 text-primary"></svg> }
+              }
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title text-2xl">{{ project.title }}</h2>
+              <p class="text-base-content/70">{{ project.description }}</p>
+              <div class="card-actions justify-end mt-4">
+                <div class="badge badge-ghost">{{ project.badges[0] }}</div>
+                <div class="badge badge-ghost">{{ project.badges[1] }}</div>
+              </div>
+              <div class="mt-4">
+                <button class="btn btn-sm btn-outline border-primary/40 text-primary hover:bg-primary hover:text-primary-content gap-2">
+                  <svg lucideExternalLink class="w-4 h-4"></svg>
+                  {{ t().projects.caseStudy }}
+                </button>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 bg-base-200 px-4 scroll-mt-20 border-t border-primary/10 relative overflow-hidden">
+    <div class="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[140px]"></div>
+    <div class="max-w-xl mx-auto text-center relative z-10">
+      <h2 class="text-4xl font-bold mb-8" data-aos="zoom-in">{{ t().contact.titlePre }} <span class="text-primary">{{ t().contact.titleHighlight }}</span></h2>
+      <p class="mb-12 text-base-content/70">{{ t().contact.description }}</p>
+      <form class="flex flex-col gap-4" (ngSubmit)="sendEmail()">
+        <div class="form-control w-full">
+          <input
+            type="text"
+            name="contactName"
+            [(ngModel)]="contactName"
+            placeholder="{{ t().contact.namePlaceholder }}"
+            class="input input-bordered bg-base-100 focus:border-primary w-full"
+            required
+          />
+        </div>
+        <div class="form-control w-full">
+          <input
+            type="email"
+            name="contactEmailInput"
+            [(ngModel)]="contactEmailInput"
+            placeholder="{{ t().contact.emailPlaceholder }}"
+            class="input input-bordered bg-base-100 focus:border-primary w-full"
+            required
+          />
+        </div>
+        <div class="form-control w-full">
+          <textarea
+            name="contactMessage"
+            [(ngModel)]="contactMessage"
+            class="textarea textarea-bordered bg-base-100 focus:border-primary h-24"
+            placeholder="{{ t().contact.messagePlaceholder }}"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-full mt-4 shadow-lg shadow-primary/30">{{ t().contact.send }}</button>
+      </form>
+
+      <div class="divider my-12 text-base-content/30 italic">{{ t().contact.divider }}</div>
+
+      <div class="flex justify-center gap-6">
+        <a class="btn btn-ghost btn-circle btn-lg text-primary hover:bg-primary/10">
+          <svg lucideCpu class="w-8 h-8"></svg>
+        </a>
+        <a class="btn btn-ghost btn-circle btn-lg text-primary hover:bg-primary/10">
+          <svg lucideGlobe class="w-8 h-8"></svg>
+        </a>
+        <a href="mailto:{{ contactEmail }}" class="btn btn-ghost btn-circle btn-lg text-primary hover:bg-primary/10" [attr.aria-label]="contactEmail" title="{{ contactEmail }}">
+          <svg lucideMail class="w-8 h-8"></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer footer-center p-10 bg-base-100 text-base-content/60 border-t border-primary/10">
+    <nav class="grid grid-flow-col gap-4">
+      <a class="link link-hover">{{ t().footer.about }}</a>
+      <a class="link link-hover">{{ t().footer.privacy }}</a>
+      <a class="link link-hover">{{ t().footer.legal }}</a>
+    </nav>
+    <aside>
+      <p>{{ t().footer.copyright }}</p>
+    </aside>
+  </footer>
+</div>
