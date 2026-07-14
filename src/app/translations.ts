@@ -30,6 +30,7 @@ export interface Translation {
       title: string;
       description: string;
       badges: [string, string];
+      url: string;
     }[];
   };
   contact: {
@@ -88,28 +89,11 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
       caseStudy: 'Ver caso de éxito',
       items: [
         {
-          title: 'Enterprise API Dashboard',
+          title: 'PrecioLuz',
           description:
-            'Plataforma de monitorización en tiempo real para arquitecturas de microservicios, con alertas proactivas y métricas de rendimiento.',
-          badges: ['Angular', 'Spring'],
-        },
-        {
-          title: 'Cloud Orchestrator',
-          description:
-            'Suite de automatización de despliegues para infraestructuras híbridas, reduciendo tiempos de entrega y errores manuales.',
-          badges: ['Java', 'Docker'],
-        },
-        {
-          title: 'Retail Analytics Suite',
-          description:
-            'Solución de inteligencia de negocio para cadenas de retail, con paneles predictivos de inventario y ventas en tiempo real.',
-          badges: ['Angular', 'PostgreSQL'],
-        },
-        {
-          title: 'Secure Payments Gateway',
-          description:
-            'Pasarela de pagos de alta disponibilidad, certificada para transacciones seguras a gran escala en entornos financieros.',
-          badges: ['Spring', 'Security'],
+            'Aplicación web que muestra en tiempo real el precio de la electricidad en España, hora a hora, para ayudar a particulares y empresas a optimizar su consumo energético.',
+          badges: ['Angular', 'API REE'],
+          url: 'https://precioluz.rypsk.com',
         },
       ],
     },
@@ -168,28 +152,11 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
       caseStudy: 'View case study',
       items: [
         {
-          title: 'Enterprise API Dashboard',
+          title: 'PrecioLuz',
           description:
-            'Real-time monitoring platform for microservices architectures, with proactive alerts and performance metrics.',
-          badges: ['Angular', 'Spring'],
-        },
-        {
-          title: 'Cloud Orchestrator',
-          description:
-            'Deployment automation suite for hybrid infrastructures, reducing delivery times and manual errors.',
-          badges: ['Java', 'Docker'],
-        },
-        {
-          title: 'Retail Analytics Suite',
-          description:
-            'Business intelligence solution for retail chains, with predictive dashboards for inventory and real-time sales.',
-          badges: ['Angular', 'PostgreSQL'],
-        },
-        {
-          title: 'Secure Payments Gateway',
-          description:
-            'High-availability payments gateway, certified for secure transactions at scale in financial environments.',
-          badges: ['Spring', 'Security'],
+            'Web application that shows the real-time price of electricity in Spain, hour by hour, helping individuals and businesses optimize their energy consumption.',
+          badges: ['Angular', 'REE API'],
+          url: 'https://precioluz.rypsk.com',
         },
       ],
     },
