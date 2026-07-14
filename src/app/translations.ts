@@ -99,7 +99,7 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
           title: 'Population',
           description:
             'Representación visual interactiva del crecimiento de la población mundial en tiempo real, mostrando nacimientos y muertes para concienciar sobre la demografía global.',
-          badges: ['Angular', 'D3.js'],
+          badges: ['React', 'Tailwind'],
           url: 'https://population.rypsk.com',
         },
       ],
@@ -169,7 +169,7 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
           title: 'Population',
           description:
             'Interactive visual representation of world population growth in real-time, showing births and deaths to raise awareness about global demographics.',
-          badges: ['Angular', 'D3.js'],
+          badges: ['React', 'Tailwind'],
           url: 'https://population.rypsk.com',
         },
       ],
