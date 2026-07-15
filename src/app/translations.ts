@@ -67,12 +67,12 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
       contact: 'Contacto',
     },
     hero: {
-      badge: 'Ingeniería de Software Empresarial',
-      titlePre: 'Construyendo',
-      titleHighlight: 'soluciones',
-      titlePost: 'escalables.',
+      badge: 'Desarrollador web y de videojuegos',
+      titlePre: 'Creo experiencias',
+      titleHighlight: 'digitales',
+      titlePost: 'que se disfrutan.',
       description:
-        'Diseñamos y desarrollamos software empresarial robusto, escalable y seguro. Ayudamos a empresas de todos los tamaños a transformar sus procesos con soluciones a medida en Java y Angular.',
+        'Diseño y desarrollo aplicaciones web y videojuegos con personalidad: productos rápidos, cuidados y pensados para convertir buenas ideas en experiencias memorables.',
       ctaProjects: 'Ver Proyectos',
       ctaContact: 'Hablemos de tu proyecto',
     },
@@ -88,6 +88,13 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
       subtitle: 'Una muestra de las soluciones que hemos desarrollado e implementado con éxito para nuestros clientes.',
       caseStudy: 'Ver caso de éxito',
       items: [
+        {
+          title: 'Snake',
+          description:
+            'Una reinvención moderna de Snake con el ritmo de Vampire Survivors: sobrevive a oleadas, mejora tu serpiente y enfréntate a compañías de IA convertidas en personajes y enemigos.',
+          badges: ['Web Game', 'Roguelite'],
+          url: 'https://snake.rypsk.com',
+        },
         {
           title: 'PrecioLuz',
           description:
@@ -144,12 +151,12 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
       contact: 'Contact',
     },
     hero: {
-      badge: 'Enterprise Software Engineering',
-      titlePre: 'Building',
-      titleHighlight: 'scalable',
-      titlePost: 'solutions.',
+      badge: 'Web & game developer',
+      titlePre: 'Crafting digital',
+      titleHighlight: 'experiences',
+      titlePost: 'with character.',
       description:
-        'We design and build robust, scalable and secure enterprise software. We help companies of all sizes transform their processes with tailored Java and Angular solutions.',
+        'I design and build web applications and games with personality: fast, polished products that turn great ideas into memorable experiences.',
       ctaProjects: 'View Projects',
       ctaContact: "Let's talk about your project",
     },
@@ -165,6 +172,13 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
       subtitle: 'A showcase of the solutions we have successfully developed and deployed for our clients.',
       caseStudy: 'View case study',
       items: [
+        {
+          title: 'Snake',
+          description:
+            'A modern Snake reinvention with Vampire Survivors energy: survive the waves, evolve your snake, and face AI companies reimagined as characters and enemies.',
+          badges: ['Web Game', 'Roguelite'],
+          url: 'https://snake.rypsk.com',
+        },
         {
           title: 'PrecioLuz',
           description:

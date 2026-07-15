@@ -1,6 +1,6 @@
 import { Component, signal, computed, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { LucideHome, LucideUser, LucideCode, LucideMail, LucideExternalLink, LucideTerminal, LucideCpu, LucideGlobe, LucideSun, LucideMoon, LucideZap, LucideActivity } from '@lucide/angular';
+import { LucideHome, LucideUser, LucideCode, LucideMail, LucideExternalLink, LucideTerminal, LucideCpu, LucideGlobe, LucideSun, LucideMoon, LucideZap, LucideActivity, LucideGamepad2 } from '@lucide/angular';
 import * as AOS from 'aos';
 import { Lang, TRANSLATIONS } from './translations';
 
@@ -23,7 +23,8 @@ export const CONTACT_EMAIL = 'info@rypsk.com';
     LucideSun,
     LucideMoon,
     LucideZap,
-    LucideActivity
+    LucideActivity,
+    LucideGamepad2
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
