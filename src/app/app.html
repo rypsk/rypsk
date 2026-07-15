@@ -168,6 +168,8 @@
               <div class="absolute inset-0 bg-primary/10 blur-2xl"></div>
               @if (project.title === 'PrecioLuz') {
                 <svg lucideZap class="w-16 h-16 text-primary relative z-10"></svg>
+              } @else if (project.title === 'Terremotos' || project.title === 'Quakes') {
+                <svg lucideActivity class="w-16 h-16 text-primary relative z-10"></svg>
               } @else {
                 <svg lucideGlobe class="w-16 h-16 text-primary relative z-10"></svg>
               }

@@ -102,6 +102,13 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
           badges: ['React', 'Tailwind'],
           url: 'https://population.rypsk.com',
         },
+        {
+          title: 'Terremotos',
+          description:
+            'Mapa mundial interactivo que muestra los terremotos en directo para seguir la actividad sísmica en tiempo real.',
+          badges: ['HTML', 'CSS + JavaScript'],
+          url: 'https://quakes.rypsk.com',
+        },
       ],
     },
     contact: {
@@ -171,6 +178,13 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
             'Interactive visual representation of world population growth in real-time, showing births and deaths to raise awareness about global demographics.',
           badges: ['React', 'Tailwind'],
           url: 'https://population.rypsk.com',
+        },
+        {
+          title: 'Quakes',
+          description:
+            'Interactive world map showing live earthquakes to follow seismic activity in real time.',
+          badges: ['HTML', 'CSS + JavaScript'],
+          url: 'https://quakes.rypsk.com',
         },
       ],
     },
